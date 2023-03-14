@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="/style.css">
+    <title>All Notes</title>
+</head>
+<body>
+    <h1> All Notes are visible here</h1>
+
+    <form method="GET" action="/notes">
+        <label for="serchInput">Search Notes</label>
+        <input type="text" name="searchTerm" id="serchInput">
+
+        <button type="submit">Search </button>
+    </form>
+
+    <ul>
+        <% notes.forEach(note => { %>
+            <li>
+                <h2><%= note.title %></h2>
+                <h3><%= new Date(note.timestamp) %></h3>
+                <p> <%= note.content.substring(0, 200) %></p>
+                <a href="/notes/<%=note.id%>">view more</a>
+            </li>
+        <%})%>
+    </ul>
+
+    <a href="/addNote">Create new Note</a>
+</body>
+</html>

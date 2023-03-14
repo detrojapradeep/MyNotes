@@ -1,0 +1,19 @@
+body {
+    max-width: 800px;
+    margin: auto;
+    font-family: 'Courier New', "Courier";
+}
+
+img {
+    width: 100px;
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
